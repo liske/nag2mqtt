@@ -1,18 +1,6 @@
-.. _appx-nag2mqtt:
-
-************************
-Appendix: nag2mqtt Setup
-************************
-
-About
-=====
-
-nag2mqtt consists of a *Nagios Event Broker* (NEB) module and a small perl daemon. The NEB module
-publishes all check results in the local filesystem (using tmpfs is highly recommended).
-These file are than publish by the perl daemon to a MQTT broker.
-
-By publishing the check results via MQTT it is possible to visualize the Nagios check states and performance data
-in SNMD using the `snmd-widgets-nagios <http://snmd.readthedocs.io/projects/snmd-widgets-nagios/en/latest/>`_ widgets.
+************
+Installation
+************
 
 
 Prerequisites
@@ -66,38 +54,3 @@ To install nag2mqtt on *Debian GNU/Linux* it is recommended to use the `prebuild
 
 
 For non-Debian systems you need to build nag2mqtt from the sources.
-
-
-
-Configuration
-=============
-
-You need to configure the ``nag2mqtt.conf`` to fit your needs (Perl syntax):
-
-.. code-block:: perl
-    :caption: /etc/nag2mqtt/nag2mqtt.conf
-
-    # Directory used by NEB plugin (neb2mqtt.so)
-    #$conf{base_dir} = q(/run/nag2mqtt/publish);
-
-    # MQTT topic used by nag2mqttd
-    #$conf{base_topic} = q(nagios);
-
-    # MQTT broker host
-    #$mqtt_conf{host} = q(localhost);
-
-    # MQTT last will topic
-    #$mqtt_conf{will_topic} = q(nagios/hosts/).hostname;
-
-    # MQTT client ID
-    #$mqtt_conf{client_id} = q(nag2mqtt);
-
-    # MQTT user name
-    #$mqtt_conf{user_name} = 'foo';
-
-    # MQTT password
-    #$mqtt_conf{password} = 'secret';
-
-
-    # DO NOT REMOVE
-    1;

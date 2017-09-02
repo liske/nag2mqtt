@@ -2,8 +2,12 @@
 About
 *****
 
-*nag2mqtt* is a *Nagios Event Broker* plugin to publish host and service
-states to a MQTT broker.
+nag2mqtt consists of a *Nagios Event Broker* (NEB) module and a small perl daemon. The NEB module
+publishes all check results in the local filesystem (using tmpfs is highly recommended).
+These file are than publish by the perl daemon to a MQTT broker.
+
+By publishing the check results via MQTT it is possible to visualize the Nagios check states and performance data
+in `SNMD <http://snmd.readthedocs.io/projects/snmd/en/latest/>`_ using the `snmd-widgets-nagios <http://snmd.readthedocs.io/projects/snmd-widgets-nagios/en/latest/>`_ widgets.
 
 
 .. include:: ../AUTHORS.rst
