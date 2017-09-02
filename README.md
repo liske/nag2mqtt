@@ -1,5 +1,7 @@
 # nag2mqtt
 
+|docs|
+
 _Nagios event broker to MQTT gateway_
 
 
