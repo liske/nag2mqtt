@@ -1,6 +1,6 @@
 # nag2mqtt
 
-|docs|
+![Documentation Status](https://readthedocs.org/projects/nag2mqtt/badge/?version=latest)
 
 _Nagios event broker to MQTT gateway_
 
